@@ -1,0 +1,78 @@
+### 課題1
+
+
+### エンティティ
+
+| エンティティ名       | エンティティ定義           | 
+| -------------------- | -------------------------- | 
+| 注文                 | 注文情報などを扱う         | 
+| 顧客                 | 顧客情報を扱う             | 
+| 注文の詳細           | 注文情報の詳細             | 
+| メニューのカテゴリー | メニューのカテゴリーを扱う | 
+| メニューの商品       | メニューの商品を扱う       | 
+
+# 属性
+
+## orders (注文)
+
+|            | データ型 | キー | 説明                               | 
+| -------------- | -------- | ---- | ---------------------------------- | 
+| order_id       | INT      | PK   | 注文のid                           | 
+| customer_id    | INT      | FK   | 顧客のid                           | 
+| payment_status | VARCHAR   |      | 注文の支払いの状況。enumで持ちたい | 
+| order_date     | DATETIME |      | 注文時の時間                       | 
+| note           | TEXT     |      | 注意書き                           | 
+| created_at          | DATETIME     |      | き                           | 
+| updated_at          | DATETIME     |      | き                           | 
+
+## customers (顧客)
+
+|              | データ型 | キー   | 説明             | 
+| ------------ | -------- | ------ | ---------------- | 
+| customer_id  | INT      | PK     | 顧客のid         | 
+| name         | VARCHAR  |        | お客様の名前     | 
+| phone_number | VARCHAR  |        | お客様の電話番号 | 
+| created_at   | DATETIME |        |                  | 
+| updated_at   | DATETIME |        |                  | 
+
+## order_details (注文の詳細)
+
+|                 | データ型 | キー | 説明                 | 
+| --------------- | -------- | ---- | -------------------- | 
+| order_detail_id | INT      | PK   | 主キー               | 
+| order_id        | INT      | FK   | orders_idの外部キー  | 
+| menu_item_id    | INT      | FK   | mene_itemsの外部キー | 
+| quantity        | INT      |      |                      | 
+| wasabi_nuki     | BOOLEAN  |      | わさびの抜きの有無   | 
+| unit_price      | DECIMAL  |      | 単価                 | 
+| subtotal        | DECIMAL  |      | 小計                 | 
+| created_at   | DATETIME    |      |                      | 
+| updated_at   | DATETIME    |      |                      | 
+
+## menu_categories (メニューカテゴリマスタ)
+
+|               | データ型 | キー | 説明         | 
+| ------------- | -------- | ---- | ------------ | 
+| category_id   | INT      | PK   | 主キー       | 
+| category_name | VARCHA   |      | カテゴリー名 | 
+| created_at |  DATETIME  |      |  | 
+| updated_at |  DATETIME  |      |  | 
+
+
+## menu_items (メニューの商品)
+
+|              | データ型 | キー | 説明                         | 
+| ------------ | -------- | ---- | ---------------------------- | 
+| menu_item_id | INT      | PK   | 主キー                       | 
+| category_id  | INT      | FK   |                              | 
+| item_name    | VARCHAR  |      | 商品名(はまち、みさきセット) | 
+| base_price   | DECIMAL  |      | 標準価格                     | 
+| is_set_menu  | BOOLEAN  |      | セットメニューかどうか       | 
+| description  | VARCHAR  |      | メニューの説明               | 
+| created_at |  DATETIME  |      |  | 
+| updated_at |  DATETIME  |      |  | 
+
+## リレーション
+
+![ER図](./images/image.png)
+
