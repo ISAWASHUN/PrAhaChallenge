@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    container_name: datamodeling2
+    image: postgres:15
+    restart: always
+    ports: 
+      - "5432:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
