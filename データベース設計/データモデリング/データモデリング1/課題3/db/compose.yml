@@ -1,0 +1,16 @@
+services:
+  db:
+    container_name: PrahaChallnge
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: postgres
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
