@@ -1,22 +1,28 @@
-INSERT INTO users (name, email, created_at, updated_at)
+INSERT INTO users (name, email)
 VALUES
-    ('Alice', 'alice@example.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Bob',   'bob@example.com',   CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Charlie','charlie@example.com',CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('Alice', 'alice@example.com'),
+    ('Bob',   'bob@example.com'),
+    ('Charlie','charlie@example.c);
 
-INSERT INTO channels (channel_name, is_public, created_at, updated_at)
+INSERT INTO channels (channel_name, is_public)
 VALUES
-    ('general', TRUE,  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('random',  FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('general', TRUE),
+    ('random',  FALSE);
 
-INSERT INTO messages (user_id, channel_id, content, created_at, updated_at)
+INSERT INTO messages (user_id, channel_id, content)
 VALUES
-    (1, 1, 'Hello, I am Alice!',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (2, 1, 'Hi, I am Bob!',       CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (3, 2, 'Hey there, I am Charlie in random!', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (1, 1, 'Hello, I am Alice!),
+    (2, 1, 'Hi, I am Bob!',),
+    (3, 2, 'Hey there, I am Charlie in random!');
 
-INSERT INTO messages_threads (message_id, user_id, content, created_at, updated_at)
+INSERT INTO messages_threads (message_id, user_id, content)
 VALUES
-    (1, 2, 'Bob replies to Alice here.',   CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (2, 1, 'Alice replies to Bob here.',   CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (3, 1, 'Alice starts a thread in random.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (1, 2, 'Bob replies to Alice here.'),
+    (2, 1, 'Alice replies to Bob here.'),
+    (3, 1, 'Alice starts a thread in random.');
+
+INSERT INTO workspace (user_id, name)
+VALUES
+    (1, 'Alice''workspace1'),
+    (2, 'Bob''workspace2'),
+    (3, 'Charlie''s workspace3');
