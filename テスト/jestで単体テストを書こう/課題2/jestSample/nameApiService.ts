@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export class NameApiService {
   private MAX_LENGTH = 4;
   public constructor() {}
