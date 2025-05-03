@@ -19,9 +19,10 @@ describe('#sumOfArray', () =>  {
     expect(sut).toEqual(1)
   })
 
-  it('空の配列の場合', () => {
-    expect(() => sumOfArray([])).toThrow(TypeError)
-  })
+  // 課題3-3では不使用のためコメントアウトにしておく
+  // it('空の配列の場合', () => {
+  //   expect(() => sumOfArray([])).toThrow(TypeError)
+  // })
 })
 
 describe('#asyncSumOfArray', () =>  {
@@ -37,9 +38,10 @@ describe('#asyncSumOfArray', () =>  {
     expect(sut).toEqual(1)
   })
 
-  it('空の配列の場合は例外を発生すること', async () => {
-    await expect(asyncSumOfArray([])).rejects.toThrow(TypeError);
-  });
+  // 課題3-3では不使用のためコメントアウトにしておく
+  // it('空の配列の場合は例外を発生すること', async () => {
+  //   await expect(asyncSumOfArray([])).rejects.toThrow(TypeError);
+  // });
 })
 
 // 課題2-2

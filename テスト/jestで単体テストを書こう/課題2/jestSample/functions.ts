@@ -1,5 +1,8 @@
+// 課題3-5で変更
 export const sumOfArray = (numbers: number[]): number => {
-  return numbers.reduce((a: number, b: number): number => a + b);
+  // reduce の第二引数に 0 を渡すことで、
+  // 空配列 → そのまま初期値 0 が返る
+  return numbers.reduce((acc, cur) => acc + cur, 0);
 };
 
 export const asyncSumOfArray = (numbers: number[]): Promise<number> => {
