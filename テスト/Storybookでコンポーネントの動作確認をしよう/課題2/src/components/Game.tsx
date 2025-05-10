@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Board from "./Board";
+import "./Game.css";
 
 function Game() {
   const [history, setHistory] = useState<Array<Array<string | null>>>([

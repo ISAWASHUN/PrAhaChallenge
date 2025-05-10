@@ -1,6 +1,7 @@
 import type { BoardProps } from "../types/board";
 import { calculateWinner } from "../utils/calculateWinner";
 import Square from "./Square";
+import "./Board.css";
 
 function Board({ xIsNext, squares, onPlay }: BoardProps) {
   function handleClick(i: number) {
