@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Game from '../components/Game';
+import { expect } from '@storybook/test';
+import { userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof Game> = {
   title: 'Components/Game',
@@ -27,4 +29,49 @@ export const WithCustomStyle: Story = {
       </div>
     ),
   ],
+};
+
+// インタラクションテスト - Xプレイヤーが勝利するシナリオ
+export const XPlayerWins: Story = {
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    const squares = canvas.getAllByRole('button').filter((button: HTMLElement) => 
+      button.className === 'square'
+    );
+    
+    // 横一列を完成させるためのクリックシーケンス（Xが勝利）
+    await userEvent.click(squares[0]);
+    await userEvent.click(squares[3]);
+    await userEvent.click(squares[1]);
+    await userEvent.click(squares[4]);
+    await userEvent.click(squares[2]);
+    
+    const statusElement = canvas.getByText(/Winner: X/i);
+    expect(statusElement).toBeInTheDocument();
+  },
+};
+
+// インタラクションテスト - Oプレイヤーが勝利するシナリオ
+export const OPlayerWins: Story = {
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    const squares = canvas.getAllByRole('button').filter((button: HTMLElement) => 
+      button.className === 'square'
+    );
+    
+    // 斜めを完成させるためのクリックシーケンス（Oが勝利）
+    await userEvent.click(squares[0]);
+    await userEvent.click(squares[4]);
+    await userEvent.click(squares[5]);
+    await userEvent.click(squares[2]);
+    await userEvent.click(squares[7]);
+    await userEvent.click(squares[6]);
+    
+    const statusElement = canvas.getByText(/Winner: O/i);
+    expect(statusElement).toBeInTheDocument();
+  },
 };
