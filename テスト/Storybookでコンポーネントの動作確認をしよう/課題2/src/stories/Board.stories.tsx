@@ -31,3 +31,16 @@ export const WinnerX: Story = {
     ],
   },
 };
+
+// 課題2-3
+// 盤面を△で埋め尽くした状態のboardのstoryを作ってみましょう。
+export const Triangle: Story = {
+  args: {
+    xIsNext: false,
+    squares: [
+      '△', '△', '△',
+      '△', '△', '△',
+      '△', '△', '△',
+    ],
+  },
+};
