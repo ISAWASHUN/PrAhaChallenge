@@ -1,8 +1,8 @@
 {
   "core": {
     "workingDir": ".reg",
-    "actualDir": "directory_contains_actual_images",
-    "thresholdRate": 0,
+    "actualDir": "./__screenshots__",
+    "thresholdRate": 0.01,
     "addIgnore": true,
     "ximgdiff": {
       "invocationType": "client"
@@ -19,4 +19,4 @@
       "bucketName": ""
     }
   }
-}
+} 

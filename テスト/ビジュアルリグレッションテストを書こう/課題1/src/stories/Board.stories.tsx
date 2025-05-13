@@ -7,6 +7,12 @@ const meta: Meta<typeof Board> = {
   argTypes: {
     onPlay: { action: 'played' },
   },
+  parameters: {
+    screenshot: {
+      delay: 200,
+      viewport: '1024x768',
+    },
+  },
 };
 
 export default meta;
