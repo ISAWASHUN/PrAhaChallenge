@@ -23,8 +23,8 @@ function Board({ xIsNext, squares, onPlay }: BoardProps) {
       <div className="status">{status}</div>
       {[0, 1, 2].map(row => (
         <div className="board-row" key={row}>
-          {[0, 1, 2].map(col => {
-            const idx = row * 3 + col;
+          {[0, 1, 2, 3].map(col => {
+            const idx = row * 4 + col;
             return (
               <Square
                 key={idx}

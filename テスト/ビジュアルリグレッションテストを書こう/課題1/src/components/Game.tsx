@@ -4,7 +4,7 @@ import './Game.css';
 
 function Game() {
   const [history, setHistory] = useState<Array<Array<string | null>>>([
-    Array(9).fill(null),
+    Array(12).fill(null),
   ]);
   const [currentMove, setCurrentMove] = useState<number>(0);
 

@@ -7,12 +7,6 @@ const meta: Meta<typeof Board> = {
   argTypes: {
     onPlay: { action: 'played' },
   },
-  parameters: {
-    screenshot: {
-      delay: 200,
-      viewport: '1024x768',
-    },
-  },
 };
 
 export default meta;
@@ -22,7 +16,7 @@ type Story = StoryObj<typeof Board>;
 export const Default: Story = {
   args: {
     xIsNext: true,
-    squares: Array(9).fill(null),
+    squares: Array(12).fill(null),
   },
 };
 
@@ -31,22 +25,21 @@ export const WinnerX: Story = {
   args: {
     xIsNext: false,
     squares: [
-      'X', 'X', 'X',
-      'O', 'O', null,
-      null, null, null,
+      'X', 'X', 'X', null,
+      'O', 'O', null, null,
+      null, null, null, null,
     ],
   },
 };
 
-// 課題2-3
-// 盤面を△で埋め尽くした状態のboardのstoryを作ってみましょう。
+// 三角形盤面
 export const Triangle: Story = {
   args: {
     xIsNext: false,
     squares: [
-      '△', '△', '△',
-      '△', '△', '△',
-      '△', '△', '△',
+      '△', '△', '△', '△',
+      '△', '△', '△', '△',
+      '△', '△', '△', '△',
     ],
   },
 };
