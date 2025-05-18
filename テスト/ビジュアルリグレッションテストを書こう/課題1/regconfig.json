@@ -2,7 +2,7 @@
   "core": {
     "workingDir": ".reg",
     "actualDir": "./__screenshots__",
-    "thresholdRate": 0.01,
+    "thresholdRate": 0,
     "addIgnore": true,
     "ximgdiff": {
       "invocationType": "client"
@@ -13,10 +13,7 @@
     "reg-notify-github-plugin": {
       "prComment": true,
       "prCommentBehavior": "default",
-      "clientId": ""
-    },
-    "reg-publish-s3-plugin": {
-      "bucketName": ""
+      "clientId": "szQ0Nzc2szQw0Q8ocsxIdM5IzMlJzUtP1TczMzcysjQ31fcMdgx3DPYI9QMA"
     }
   }
-} 
+}
