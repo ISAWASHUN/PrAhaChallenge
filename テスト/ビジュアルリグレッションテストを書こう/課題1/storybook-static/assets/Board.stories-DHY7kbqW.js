@@ -1,4 +1,4 @@
-import{B as i}from"./Board-CoBXG4EH.js";import"./jsx-runtime-D_zvdyIk.js";import"./Square-Ctoxv2JR.js";const f={title:"Components/Board",component:i,argTypes:{onPlay:{action:"played"}},parameters:{screenshot:{delay:200,viewport:"1024x768"}}},e={args:{xIsNext:!0,squares:Array(9).fill(null)}},r={args:{xIsNext:!1,squares:["X","X","X","O","O",null,null,null,null]}},s={args:{xIsNext:!1,squares:["△","△","△","△","△","△","△","△","△"]}};var a,n,o;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
+import{B as i}from"./Board-yHWbyQ3v.js";import"./jsx-runtime-D_zvdyIk.js";import"./Square-BV3w8_Fj.js";const f={title:"Components/Board",component:i,argTypes:{onPlay:{action:"played"}},parameters:{screenshot:{delay:200,viewport:"1024x768"}}},e={args:{xIsNext:!0,squares:Array(9).fill(null)}},r={args:{xIsNext:!1,squares:["X","X","X","O","O",null,null,null,null]}},s={args:{xIsNext:!1,squares:["△","△","△","△","△","△","△","△","△"]}};var a,n,o;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
   args: {
     xIsNext: true,
     squares: Array(9).fill(null)

@@ -1,4 +1,4 @@
-import{S as d}from"./Square-Ctoxv2JR.js";import"./jsx-runtime-D_zvdyIk.js";const S={title:"Components/Square",component:d,argTypes:{onSquareClick:{action:"clicked"}}},r={args:{value:null}},e={args:{value:"X"}},a={args:{value:"O"}};var s,o,t;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`{
+import{S as d}from"./Square-BV3w8_Fj.js";import"./jsx-runtime-D_zvdyIk.js";const S={title:"Components/Square",component:d,argTypes:{onSquareClick:{action:"clicked"}}},r={args:{value:null}},e={args:{value:"X"}},a={args:{value:"O"}};var s,o,t;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`{
   args: {
     value: null
   }

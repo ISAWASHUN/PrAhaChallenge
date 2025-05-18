@@ -4,7 +4,7 @@ import './Square.css';
 function Square({ value, onSquareClick }: SquareProps) {
   return (
     <button className="square" onClick={onSquareClick}>
-      {value}
+      <span style={{ color: 'red' }}>{value}</span>
     </button>
   );
 }
