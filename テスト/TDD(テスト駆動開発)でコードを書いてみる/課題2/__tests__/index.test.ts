@@ -7,12 +7,13 @@ describe("#main", () => {
     describe("コマンドラインにaddを指定した場合", () => {
       it("足し算ができるかどうか", () => {
         // Arrange
-        const args = ["add", 1, 2];
-        const args2 = ["add", 1, 2, 3];
+        const args = ["ts-node", "src/index.ts", "add", 1, 2];
+        const args2 = ["ts-node", "src/index.ts", "add", 1, 2, 3];
   
         // Act
         const result = main(args);
         const result2 = main(args2);
+
         // Assert
         expect(result).toBe(3);
         expect(result2).toBe(6);
@@ -20,7 +21,7 @@ describe("#main", () => {
   
       it("計算結果が1000を超えた時「too big」と文字列を表示する", () => {
         // Arrange
-        const args = ["add", 1, 1000];
+        const args = ["ts-node", "src/index.ts", "add", 1, 1000];
   
         // Act
         const result = main(args);
@@ -33,8 +34,8 @@ describe("#main", () => {
     describe("コマンドラインにsubstractを指定した場合", () => {
       it("引き算ができるかどうか", () => {
         // Arrange
-        const args = ["substract", 2, 1];
-        const args2 = ["substract", 10, 5, 3];
+        const args = ["ts-node", "src/index.ts", "substract", 2, 1];
+        const args2 = ["ts-node", "src/index.ts", "substract", 10, 5, 3];
         
         // Act
         const result = main(args);
@@ -47,7 +48,7 @@ describe("#main", () => {
   
       it("計算結果がマイナスになった場合には「negative number」と文字列が返る。", () => {
         // Arrange
-        const args = ["substract", 1, 2];
+        const args = ["ts-node", "src/index.ts", "substract", 1, 2];
   
         // Act
         const result = main(args);
@@ -60,8 +61,8 @@ describe("#main", () => {
     describe("コマンドラインにmultiplyを指定した場合", () => {
       it("掛け算ができるかどうか", () => {
         // Arrange
-        const args = ["multiply", 2, 3];
-        const args2 = ["multiply", 2, 3, 4];
+        const args = ["ts-node", "src/index.ts", "multiply", 2, 3];
+        const args2 = ["ts-node", "src/index.ts", "multiply", 2, 3, 4];
   
         // Act
         const result = main(args);
@@ -74,7 +75,7 @@ describe("#main", () => {
   
       it("計算結果が1000を超えた時「big big number」と文字列を表示する", () => {
         // Arrange
-        const args = ["multiply", 100, 10];
+        const args = ["ts-node", "src/index.ts", "multiply", 100, 11];
   
         // Act
         const result = main(args);
@@ -87,8 +88,8 @@ describe("#main", () => {
     describe("コマンドラインにdivideを指定した場合", () => {
       it("割り算ができるかどうか", () => {
         // Arrange
-        const args = ["divide", 6, 3];
-        const args2 = ["divide", 6, 3, 2];
+        const args = ["ts-node", "src/index.ts", "divide", 6, 3];
+        const args2 = ["ts-node", "src/index.ts", "divide", 6, 3, 2];
   
         // Act
         const result = main(args);
@@ -101,7 +102,7 @@ describe("#main", () => {
   
       it("0で割り算をした場合には「0で割り算できません」と文字列が返る", () => {
         // Arrange
-        const args = ["divide", 1, 0];
+        const args = ["ts-node", "src/index.ts", "divide", 1, 0];
         
         // Act
         const result = main(args);
@@ -115,7 +116,7 @@ describe("#main", () => {
   describe("異常系", () => {
     it("引数が31個以上の引数を指定するとエラーが発生する", () => {
       // Arrange
-      const args = ["add", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+      const args = ["ts-node", "src/index.ts", "add", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
       // Act
       const result = main(args);
@@ -126,7 +127,7 @@ describe("#main", () => {
 
     it(" 引数(コマンドラインの[0]以外)が数字以外だとエラーを出す", () => {
       // Arrange
-      const args = ["add", 1, "a", 3];
+      const args = ["ts-node", "src/index.ts", "add", 1, "a", 3];
 
       // Act
       const result = main(args);
@@ -134,5 +135,16 @@ describe("#main", () => {
       // Assert
       expect(result).toBe("引数が数字ではありません。");
     })
+  })
+
+  it("引数がないとエラーが発生する", () => {
+    // Arrange
+    const args = ["ts-node", "src/index.ts"];
+
+    // Act
+    const result = main(args);
+
+    // Assert
+    expect(result).toBe("引数が足りません");
   })
 });
